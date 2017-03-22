@@ -1,2 +1,3 @@
-docker-pycodestyle-checker
+docker-pycodestyle
 ===
+
