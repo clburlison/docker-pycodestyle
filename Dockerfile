@@ -3,6 +3,9 @@ MAINTAINER "Clayton Burlison" <github@clburlison.com>
 
 ENV PYCODESTYLE_VERSION=2.3.1
 
-RUN pip install pycodestyle==$PYCODESTYLE_VERSION
+RUN apk add --no-cache \
+    git \
+    openssh-client \
+    && pip install pycodestyle==$PYCODESTYLE_VERSION
 
 CMD ["/code"]
