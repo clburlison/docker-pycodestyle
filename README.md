@@ -30,3 +30,29 @@ This container is designed for running lint checks with CI build systems. Curren
 ...while the py-wheezy containers also include:
 * enchant
 * pyenchant (pip)
+
+
+# Usage
+_more documentation will be added soon_
+
+## Spell checking
+Spelling test with:
+
+```bash
+docker run --rm -v $(pwd):/code -w "/code" clburlison/pylint:py2-wheezy \
+  pylint --disable=all --reports=n --enable=spelling \
+  --spelling-dict=en_US --ignore-comments=no \
+  --spelling-private-dict-file=tests/words \
+  path/to/python/code
+```
+
+To add unknown words to a 'words' file with:
+
+```bash
+docker run --rm -v $(pwd):/code -w "/code" clburlison/pylint:py2-wheezy \
+  pylint --disable=all --reports=n --enable=spelling \
+  --spelling-dict=en_US --ignore-comments=no \
+  --spelling-store-unknown-words=y \
+  --spelling-private-dict-file=tests/words \
+  path/to/python/code
+```
