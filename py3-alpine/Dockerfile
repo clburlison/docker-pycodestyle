@@ -4,6 +4,6 @@ MAINTAINER "Clayton Burlison" <github@clburlison.com>
 RUN apk add --no-cache \
     git \
     openssh-client \
-    && pip install flake8
+    && pip install flake8 pylint pyenchant
 
 CMD ["/code"]
